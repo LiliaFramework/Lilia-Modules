@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Temp - Lilia Modules Documentation</title>
+		<title>WorkshopDownloader - Lilia Modules Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Temp - Lilia Modules Documentation" />
+		<meta property="og:title" content="WorkshopDownloader - Lilia Modules Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Protection Module." />
+			<meta property="og:description" content="Hook Documentation for TEMPTEXT Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -263,7 +263,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/temp/">Temp</a></summary>
 
 									<ul>
@@ -274,7 +274,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/temp/">Temp</a></summary>
 
 									<ul>
@@ -337,7 +337,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - general/workshopdownloader/">WorkshopDownloader</a></summary>
 
 									<ul>
@@ -355,8 +355,8 @@
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Temp</h1>
-	<h2>Configuration for Protection Module.</h2>
+	<h1>WorkshopDownloader</h1>
+	<h2>Hook Documentation for TEMPTEXT Module.</h2>
 </header>
 
 <p>
@@ -371,7 +371,7 @@
 					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>This table defines the default settings for the Protection Module.</p>
+					<p>This table defines the default settings for the WorkshopDownloader Module.</p>
 			</header>
 
 
@@ -381,11 +381,22 @@
 					<ul>
 
 							<li>
-								<span class="tag parameter">TempValue</span>
+								<span class="tag parameter">GamemodeWorkshop</span>
 
 
 
-								<p> Indicates whether Family Sharing is enabled on this server | <strong>bool</strong></p>
+								<p> The Workshop IDs for addons that Lilia downloads by default | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">AutoWorkshopDownloader</span>
+
+
+
+								<p> Enable or disable automatic workshop collection downloads | <strong>bool</strong></p>
 							</li>
 					</ul>
 

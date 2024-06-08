@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Temp - Lilia Modules Documentation</title>
+		<title>Whitelist - Lilia Modules Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Temp - Lilia Modules Documentation" />
+		<meta property="og:title" content="Whitelist - Lilia Modules Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Protection Module." />
+			<meta property="og:description" content="Configuration for Server Whitelist Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -263,7 +263,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/temp/">Temp</a></summary>
 
 									<ul>
@@ -274,7 +274,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/temp/">Temp</a></summary>
 
 									<ul>
@@ -326,7 +326,7 @@
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - general/whitelist/">Whitelist</a></summary>
 
 									<ul>
@@ -355,8 +355,8 @@
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Temp</h1>
-	<h2>Configuration for Protection Module.</h2>
+	<h1>Whitelist</h1>
+	<h2>Configuration for Server Whitelist Module.</h2>
 </header>
 
 <p>
@@ -371,7 +371,7 @@
 					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>This table defines the default settings for the Protection Module.</p>
+					<p>This table defines the default settings for the Whitelist Module.</p>
 			</header>
 
 
@@ -381,11 +381,44 @@
 					<ul>
 
 							<li>
-								<span class="tag parameter">TempValue</span>
+								<span class="tag parameter">WhitelistEnabled</span>
 
 
 
-								<p> Indicates whether Family Sharing is enabled on this server | <strong>bool</strong></p>
+								<p> Enable or disable the Whitelist | <strong>bool</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">BlacklistedEnabled</span>
+
+
+
+								<p> Enable or disable the Blacklist | <strong>bool</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">BlacklistedSteamID64</span>
+
+
+
+								<p> Specify SteamID64s to be blacklisted from your server | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">WhitelistedSteamID64</span>
+
+
+
+								<p> Specify SteamID64s to be whitelisted from your server | <strong>table</strong></p>
 							</li>
 					</ul>
 
