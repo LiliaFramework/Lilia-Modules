@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>AFKManager - Lilia Modules Documentation</title>
+		<title>lia.voice - Lilia Modules Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="AFKManager - Lilia Modules Documentation" />
+		<meta property="og:title" content="lia.voice - Lilia Modules Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for AFK Manager Module." />
+			<meta property="og:description" content="Helper library for managing voice lines." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -32,7 +32,7 @@
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../libraries/lia.voice/">lia.voice</a></summary>
 
 									<ul>
@@ -71,7 +71,7 @@ register											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/afkmanager/">AFKManager</a></summary>
 
 									<ul>
@@ -331,103 +331,245 @@ register											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>AFKManager</h1>
-	<h2>Configuration for AFK Manager Module.</h2>
+	<h1>lia.voice</h1>
+	<h2>Helper library for managing voice lines.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="defineClass">
+					<h1><span class="realm shared"></span></span>defineClass(class, onCheck, onModify, global)</h1>
 				</a>
 
-					<p>This table defines the default settings for the AFK Manager Module.</p>
+					<p>Defines a voice class with specific callbacks.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">WarningTime</span>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">String</span></span>
 
 
-
-								<p> Specifies the time in seconds before issuing an AFK warning | <strong>number</strong></p>
+								<p> The class identifier.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">TimerInterval</span>
+								<span class="tag parameter">onCheck</span>
+
+									<span class="tag"><span class="type">Function</span></span>
 
 
-
-								<p> Specifies the interval in seconds for checking AFK status | <strong>number</strong></p>
+								<p> Callback to determine if the client belongs to this class.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">KickTime</span>
+								<span class="tag parameter">onModify</span>
+
+									<span class="tag"><span class="type">Function</span></span>
 
 
-
-								<p> Specifies the time in seconds before kicking an AFK player | <strong>number</strong></p>
+								<p> Callback to modify voice sounds based on the class.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">AFKAllowedPlayers</span>
+								<span class="tag parameter">global</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether the class applies globally.</p>
+							</li>
+					</ul>
 
 
 
-								<p> Specifies a list of players allowed to be AFK without consequences | <strong>table</strong></p>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getClass">
+					<h1><span class="realm shared"></span></span>getClass(client)</h1>
+				</a>
+
+					<p>Retrieves definitions of voice classes applicable to a client.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The client to check.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>An array of class definitions.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getVoiceList">
+					<h1><span class="realm shared"></span></span>getVoiceList(class, text, delay)</h1>
+				</a>
+
+					<p>Retrieves voice line replacements for a specific class and text.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The voice class identifier.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">KickMessage</span>
+								<span class="tag parameter">text</span>
+
+									<span class="tag"><span class="type">String</span></span>
 
 
-
-								<p> Specifies the message sent to AFK players before they are kicked | <strong>string</strong></p>
+								<p> The text to match for replacements.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">WarningHead</span>
+								<span class="tag parameter">delay</span>
+
+									<span class="tag"><span class="type">number</span></span>
 
 
+								<p> Optional delay before each replacement.</p>
+							</li>
+					</ul>
 
-								<p> Specifies the header of the AFK warning message | <strong>string</strong></p>
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a> or <span class="type">nil</span>
+
+								<p>An array of replacements or nil if none found.</p>
+							</li>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a> or <span class="type">nil</span>
+
+								<p>The modified text after replacements or nil if none found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="register">
+					<h1><span class="realm shared"></span></span>register(class, key, replacement, source)</h1>
+				</a>
+
+					<p>Registers a voice line replacement for a specific class and key.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The voice class identifier.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">WarningSub</span>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key for the voice line.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">replacement</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The replacement text or sound file.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">source</span>
 
 
 
-								<p> Specifies the subtext of the AFK warning message | <strong>string</strong></p>
+								<p> The source of the replacement (can be a string or table of strings).</p>
 							</li>
 					</ul>
 
